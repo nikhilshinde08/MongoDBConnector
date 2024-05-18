@@ -14,11 +14,28 @@ def get_requirements(file_path:str)->List[str]:
 
     return requirements"""
 
+
+with open("README.md","r",encoding="utf-8") as f:
+    long_description=f.read()
+
+    __version__="0.0.4"
+    REPO_NAME='mongodb_connector'
+    PKG_NAME="mongoDB-Connect"
+    AUTHOR_USER_NAME="nikhilshinde08"
+    AUTHOR_EMAIL="nikhilshinde615@gmail.com"
+
 setup(
-    name='DimondPricePrediction',
-    version='0.0.1',
-    author='nikhil shinde',
-    author_email='nikhilshinde615@gmail.com',
-    install_requires=["scikit-learn","pandas","numpy"],
-    packages=find_packages()
-)
+    name=PKG_NAME,
+    version=__version__,
+    author=AUTHOR_USER_NAME,
+    author_email=AUTHOR_EMAIL,
+    description="A python package for connecting with database.",
+    long_description=long_description,
+    long_description_content="text/markdown",
+    url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}",
+    project_urls={
+        "Bug Tracker": f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}/issues",
+    },
+    package_dir={"": "src"},
+    packages=find_packages(where="src"),
+    )
