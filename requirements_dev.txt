@@ -16,4 +16,4 @@ flake8==5.0.4
 mypy==0.971
 
 tox==3.2.0
-tox-gh-actions==2.11.1
+tox-gh-actions==3.2.0
